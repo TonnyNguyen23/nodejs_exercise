@@ -1,30 +1,51 @@
 const express = require('express');
-const authRoute = require('./auth.route');
-const userRoute = require('./user.route');
+// const authRoute = require('./auth.route');
+// const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
 const config = require('../../config/config');
-const classRoute = require('./class.route');
-const studentRoute = require('./student.route');
+// const classRoute = require('./class.route');
+// const studentRoute = require('./student.route');
+const peopleRoute = require('./people.route');
+const professionalRoute = require('./professional.route');
+const workRoute = require('./work.route');
+const companyRoute = require('./company.route');
 
 const router = express.Router();
 
 const defaultRoutes = [
+  // {
+  //   path: '/auth',
+  //   route: authRoute,
+  // },
+  // {
+  //   path: '/student',
+  //   route: studentRoute,
+  // },
+  // {
+  //   path: '/class',
+  //   route: classRoute,
+  // },
   {
-    path: '/auth',
-    route: authRoute,
+    path: '/people',
+    route: peopleRoute,
   },
   {
-    path: '/student',
-    route: studentRoute,
+    path: '/professional',
+    route: professionalRoute,
   },
   {
-    path: '/class',
-    route: classRoute,
+    path: '/work',
+    route: workRoute,
   },
   {
-    path: '/users',
-    route: userRoute,
+    path: '/company',
+    route: companyRoute,
   },
+  
+  // {
+  //   path: '/users',
+  //   route: userRoute,
+  // },
 ];
 
 const devRoutes = [
