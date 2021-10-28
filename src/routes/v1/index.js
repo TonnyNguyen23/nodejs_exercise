@@ -9,6 +9,11 @@ const peopleRoute = require('./people.route');
 const professionalRoute = require('./professional.route');
 const workRoute = require('./work.route');
 const companyRoute = require('./company.route');
+const nhaCungCapRoute = require('./nhacungcap.route');
+const dangKyCungCapRoute = require('./dangkycungcap.route');
+const loaiDichVuRoute = require('./loaidichvu.route');
+const mucPhiRoute = require('./mucphi.route');
+const dongXeRoute = require('./dongxe.route');
 
 const router = express.Router();
 
@@ -41,7 +46,26 @@ const defaultRoutes = [
     path: '/company',
     route: companyRoute,
   },
-  
+  {
+    path: '/nhacungcap',
+    route: nhaCungCapRoute,
+  },
+  {
+    path: '/dangkycungcap',
+    route: dangKyCungCapRoute,
+  },
+  {
+    path: '/loaidichvu',
+    route: loaiDichVuRoute,
+  },
+  {
+    path: '/mucphi',
+    route: mucPhiRoute,
+  },
+  {
+    path: '/dongxe',
+    route: dongXeRoute,
+  },
   // {
   //   path: '/users',
   //   route: userRoute,

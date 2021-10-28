@@ -7,7 +7,7 @@ const ApiError = require('../utils/ApiError');
  * @param {Object} companyBody
  * @returns {Promise<company>}
  */
-const createcompany = async (companyBody) => {
+const createCompany = async (companyBody) => {
   return company.create(companyBody);
 };
 
@@ -20,7 +20,7 @@ const createcompany = async (companyBody) => {
  * @param {number} [options.page] - Current page (default = 1)
  * @returns {Promise<QueryResult>}
  */
-const querycompanys = async (filter, options) => {
+const queryCompanies = async (filter, options) => {
   const companys = await company.paginate(filter, options);
   return companys;
 };
@@ -30,7 +30,7 @@ const querycompanys = async (filter, options) => {
  * @param {ObjectId} id
  * @returns {Promise<company>}
  */
-const getcompanyById = async (id) => {
+const getCompanyById = async (id) => {
   return company.findById(id);
 };
 
@@ -41,7 +41,7 @@ const getcompanyById = async (id) => {
  * @returns {Promise<company>}
  */
 
-const updatecompanyById = async (companyId, updateBody) => {
+const updateCompanyById = async (companyId, updateBody) => {
   const company = await getcompanyById(companyId);
   if (!company) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Company not found');
@@ -56,7 +56,7 @@ const updatecompanyById = async (companyId, updateBody) => {
  * @param {ObjectId} companyId
  * @returns {Promise<company>}
  */
-const deletecompanyById = async (companyId) => {
+const deleteCompanyById = async (companyId) => {
   const company = await getcompanyById(companyId);
   if (!company) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Company not found');
@@ -67,7 +67,7 @@ const deletecompanyById = async (companyId) => {
 
 module.exports = {
   createCompany,
-  queryCompanys,
+  queryCompanies,
   getCompanyById,
   updateCompanyById,
   deleteCompanyById,
